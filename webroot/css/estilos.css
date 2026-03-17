@@ -1,0 +1,332 @@
+@font-face{
+    font-family:Honk;
+    src: url("/OPVDWECSopaDeLetras/webroot/css/fonts/Honk/Honk-Regular-VariableFont_MORF,SHLN.ttf");
+    /*src: url("https://fonts.googleapis.com/css2?family=Honk&display=swap");*/
+}
+@font-face{
+    font-family:Bebas;
+    src: url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+}
+:root{
+    --ancho:../js/crearTablero/dimension;
+    --alto:../js/crearTablero/dimension;
+}
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:aliceblue;
+    overflow-y:hidden;
+    & header{
+        background-color:rgb(0,255,64);
+        position:fixed;
+        top:0;
+        width:100vw;
+        text-align:center;
+        z-index:100;
+        & h1{
+            margin-top:5px;
+            margin-bottom:2.5px;
+        }
+        & div{
+            margin-top:2.5px;
+            background-color:yellow;
+            padding-top:4px;
+            padding-bottom:4px;
+        }
+    }
+}
+#tabla2{
+    width:100%;
+    height:70.3vh;
+    border-collapse:collapse;
+    & tr{
+        width:100%;
+    }
+    & td{
+        border:1px solid black;
+        text-align:center;
+        font-size:1.5rem;
+    }
+    /*/& .borde{
+        border-bottom-left-radius:10px;
+        border:1px solid yellow;
+    }*/
+}
+#tabla1{
+    width:100%;
+    height:10vh;
+    border-collapse:collapse;
+    & tr{
+        width:100%;
+    }
+    & td{
+        width:25%;
+        background-color:aliceblue;
+        border:1px solid black;
+        text-align:center;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+}
+#FooterInicio{
+    background-color:rgb(0,255,64);
+    position:fixed;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    padding:10px;
+    & a{
+        text-decoration:none;
+    }
+}
+#FooterJuego{
+    position:absolute;
+    width:100%;
+    height:10vh;
+    background-color:rgb(0,255,64);
+    z-index:1;
+    & span{
+        display:block;
+        position:relative;
+        width:180px;
+        height:4vh;
+        background-color:black;
+        color:white;
+        border:3px solid blue;
+        border-radius:10px;
+        top:10%;
+        left:50%;
+        text-align:center;
+        line-height:4vh;
+        font-family:Honk;
+        font-size:2.5rem;
+        transform:translate(-50%);
+    }
+    & #Copyright{
+        width:100%;
+        height:6vh;
+        text-align:center;
+        line-height:6vh;
+    }
+}
+#tabla3{
+    position:absolute;
+    width:40%;
+    margin-left:30%;
+    border-collapse:collapse;
+    bottom:60%;
+    z-index:100;
+    & thead{
+        & td{
+            background-color:blue;
+            color:white;
+        }
+    }
+    & tr:nth-of-type(1){
+        background-color:gold;
+    }
+    & tr:nth-of-type(2){
+        background-color:silver;
+    }
+    & tr:nth-of-type(3){
+        background-color:maroon;
+    }
+    & td{
+        border:1px solid black;
+        text-align:center;
+        padding:10px;
+        color:#fffff0;
+    }
+}
+#offline{
+    width:100%;
+    height:5vh;
+    background-color:red;
+    color:white;
+    text-align:center;
+    line-height:5vh;
+    font-weight:bold;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+#Iniciar{
+    width:100vw;
+    height:14vh;
+    margin-top:250px;
+    text-align:center;
+    line-height:14vh;
+    font-weight:900;
+    font-size:4rem;
+}
+#Comenzar{
+    background-color:cyan;
+    color:blue;
+    margin-top:140px;
+    margin-left:calc(50vw - 205.05px);
+    padding:20px 40px 20px 40px;
+    font-size:2rem;
+}
+#Comenzar:hover,#Opciones>input:hover{
+    background-color:blue;
+    color:yellow;
+    cursor:pointer;
+}
+#Cronometro{
+    display:block;
+    width:100%;
+    height:4vh;
+    background-color:red;
+    color:yellow;
+    border-bottom:1px solid black;
+    text-align:center;
+    line-height:4vh;
+    font-family:Bebas;
+}
+#NombreJugador{
+    display:flex;
+    position:absolute;
+    width:100dvw;
+    height:100dvh;
+    background-color:rgba(0,0,0,0.5);
+    top:0;
+    left:0;
+    gap:50px;
+    align-items:center;
+    z-index:100;
+    & input:nth-of-type(1){
+        width:calc(100dvw - 550px);
+        height:5vh;
+        background-color:yellow;
+    }
+    #conNombre{
+        width:500px;
+        height:5vh;
+    }
+    #sinNombre{
+        position:absolute;
+        flex:0 0 355.5px;
+        height:81px;
+        padding:20px 40px 20px 40px;
+        top:45%;
+        left:calc(42.75%);
+        font-size:2rem;
+    }
+    & button:nth-of-type(1){
+        background-color:cyan;
+        color:blue;
+    }
+    & button:nth-of-type(1):hover{
+        background-color:blue;
+        color:yellow;
+        cursor:pointer;
+    }
+    & #Error{
+        position:absolute;
+        background-color:rgba(0,0,0,0.25);
+        color:rgb(255, 0, 0);
+        top:55%;
+        left:10%;
+        font-size:3rem;
+    }
+    & #Info{
+        position:absolute;
+        width:90%;
+        color:lime;
+        top:35%;
+        left:10%;
+        font-size:3rem;
+    }
+}
+#SeleccionDeDificultad{
+    display:flex;
+    position:absolute;
+    width:100dvw;
+    height:100dvh;
+    background-color:rgba(0,0,0,0.5);
+    top:0;
+    left:0;
+    gap:50px;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+    & button{
+        flex:0 0 355.5px;
+        height:81px;
+        background-color:cyan;
+        color:blue;
+        padding:20px 40px 20px 40px;
+        font-size:2rem;
+    }
+    & button:hover{
+        background-color:blue;
+        color:yellow;
+        cursor:pointer;
+    }
+    & p{
+        position:absolute;
+        color:orange;
+        top:30%;
+        left:27%;
+        font-size:5rem;
+    }
+}
+#Opciones{
+    display:flex;
+    position:absolute;
+    width:100dvw;
+    height:20dvh;
+    top:50%;
+    align-items:center;
+    justify-content:center;
+    gap:53px;
+    & input{
+        flex:0 0 355.5px;
+        height:81px;
+        background-color:cyan;
+        color:blue;
+        padding:20px 40px 20px 40px;
+        font-size:2rem;
+    }
+}
+#Dificultad{
+    position:absolute;
+    width:100%;
+    top:13dvh;
+    text-align:center;
+    font-size:3rem;
+}
+#PantallaDeCarga{
+    display:flex;
+    width:100dvw;
+    height:100dvh;
+    background-color:black;
+    color:white;
+    justify-content:center;
+    *{
+        line-height:100dvh;
+        font-size:4rem;
+    }
+    & span{
+        display:block;
+        height:100dvh;
+    }
+}
+.noEncontrado{
+    background-color:red;
+}
+.Encontrado{
+    background-color:lime;
+}
+.noClicado{
+    background-color:lightgrey;/*cornflowerblue;*/
+}
+.clicado{
+    background-color:yellow;
+}
+.Tachado{
+    text-decoration:line-through;
+}
+.Marcar{
+    background-color:yellow;
+}
