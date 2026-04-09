@@ -206,6 +206,11 @@ async function IniciarSopaDeLetras(){
     palabras.sort((a,b)=>b.length-a.length);
     pintarTableroConDOM(rellenarTablero(palabras),palabras);
     div=document.createElement("div");
+    div.setAttribute("id","titulo");
+    div.textContent="PUNTUACIONES:"
+    document.getElementById("Cuerpo").appendChild(div);
+    escribirPuntuaciones(dificultad,puntuaciones,"Jue");
+    div=document.createElement("div");
     div.setAttribute("id","Cronometro");
     div.textContent="TIEMPO TRANSCURRIDO: 00:00:00";
     document.getElementById("Cuerpo").appendChild(div);
@@ -222,6 +227,8 @@ async function IniciarSopaDeLetras(){
             altoAviso=estilosAviso.height;
         }
         document.getElementById("tabla2").style.height="calc(100dvh - "+altoTablero+" - "+altoCronometro+" - "+altoFooter+" - "+altoAviso+")";
+        document.getElementById("tabla2").style.width="calc(100dvh - "+altoTablero+" - "+altoCronometro+" - "+altoFooter+" - "+altoAviso+")";
+
     },1);
     I2=setInterval(()=>{
         const palabras=document.getElementById("tabla1").getElementsByTagName("p");
@@ -340,6 +347,7 @@ function FinalizarSopaDeLetras(){
     var div,input,span;
     cuerpo.removeChild(document.getElementById("tabla1"));
     cuerpo.removeChild(document.getElementById("tabla2"));
+    cuerpo.removeChild(document.getElementById("tabla3"));
     cuerpo.removeChild(document.getElementById("Cronometro"));
     cuerpo.removeChild(document.getElementById("FooterJuego"));
     h1.textContent="SOPA DE LETRAS";
@@ -370,7 +378,7 @@ function FinalizarSopaDeLetras(){
     }
     div.appendChild(span);
     cuerpo.appendChild(div);
-    escribirPuntuaciones(dificultad,puntuaciones);
+    escribirPuntuaciones(dificultad,puntuaciones,"Fin");
     div=document.createElement("div");
     div.setAttribute("id","Opciones");
     input=document.createElement("input");

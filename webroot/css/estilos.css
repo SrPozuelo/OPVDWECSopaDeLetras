@@ -14,6 +14,7 @@
 *{
     margin:0;
     padding:0;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
 }
 body{
     background-color:aliceblue;
@@ -38,16 +39,18 @@ body{
     }
 }
 #tabla2{
-    width:100%;
+    width:50%;
     height:70.3vh;
-    border-collapse:collapse;
+    margin-left:15dvw;;
     & tr{
         width:100%;
     }
     & td{
         border:1px solid black;
         text-align:center;
+        border-radius:5px;
         font-size:1.5rem;
+        font-weight:900;
     }
     /*/& .borde{
         border-bottom-left-radius:10px;
@@ -111,12 +114,23 @@ body{
         line-height:6vh;
     }
 }
+/*.Ini{
+
+}*/
+.Jue{
+    left:55%;
+    bottom:45%;
+}
+.Fin{
+    left:30%;
+    bottom:60%;
+}
 #tabla3{
     position:absolute;
     width:40%;
-    margin-left:30%;
+    
     border-collapse:collapse;
-    bottom:60%;
+    
     z-index:100;
     & thead{
         & td{
@@ -312,6 +326,13 @@ body{
         height:100dvh;
     }
 }
+#titulo{
+    position:absolute;
+    height:5dvh;
+    top:30%;
+    left:65%;
+    font-size:3rem;
+}
 .noEncontrado{
     background-color:red;
 }
@@ -319,7 +340,7 @@ body{
     background-color:lime;
 }
 .noClicado{
-    background-color:lightgrey;/*cornflowerblue;*/
+    background-color:white;/*cornflowerblue;*/
 }
 .clicado{
     background-color:yellow;

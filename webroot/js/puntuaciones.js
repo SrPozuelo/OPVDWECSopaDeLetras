@@ -107,7 +107,7 @@ export function guardarPuntuaciones(dificultad){
     }
     localStorage.setItem(nombre,puntuaciones[dificultad]);
 }
-export function escribirPuntuaciones(dificultad,puntuaciones){
+export function escribirPuntuaciones(dificultad,puntuaciones,clase){
     const cuerpo=document.getElementById("Cuerpo");
     const tabla=document.createElement("table");
     const tbody=document.createElement("tbody");
@@ -115,6 +115,7 @@ export function escribirPuntuaciones(dificultad,puntuaciones){
     const LONGITUD=3;
     var td,tr,tds=["POSICIÓN","NOMBRE","TIEMPO"];
     tabla.setAttribute("id","tabla3");
+    tabla.setAttribute("class",clase);
     cuerpo.appendChild(tabla);
         tabla.appendChild(thead);
             tr=document.createElement("tr");
