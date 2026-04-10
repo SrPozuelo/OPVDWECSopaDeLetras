@@ -42,18 +42,50 @@ function horaActual(){
     }
     return horas+":"+minutos+":"+segundos;
 }
+function crearCabecera(){
+    const cuerpo=document.getElementById("Cuerpo");
+    const header=document.createElement("header");
+    const contenido=document.createElement("div");
+    const identidad=document.createElement("div");
+    const curso=document.createElement("div");
+    const logo=document.createElement("div");
+    const h1=document.createElement("h1");
+    header.setAttribute("class","cabecera-principal");
+    header.appendChild(contenido);
+    contenido.setAttribute("class","contenido-cabecera");
+    contenido.appendChild(identidad);
+    contenido.appendChild(curso);
+    identidad.setAttribute("class","identidad");
+    identidad.appendChild(logo);
+    identidad.appendChild(h1);
+    logo.setAttribute("class","logo-iniciales");
+    logo.textContent="ÓS";
+    h1.textContent="Óscar Pozuelo Villamandos";
+    curso.setAttribute("class","curso-badge");
+    curso.textContent="SOPA DE LETRAS";
+    cuerpo.appendChild(header);
+}
+function crearPieDePagina(){
+    const cuerpo=document.getElementById("Cuerpo");
+    const footer=document.createElement("footer");
+    const contenido=document.createElement("div");
+    const iconos=document.createElement("div");
+    const texto=document.createElement("div");
+    var i,a,p;
+    cuerpo.appendChild(footer);
+    footer.setAttribute("class","pie-pagina");
+    footer.appendChild(contenido);
+    contenido.setAttribute("class","contenido-footer");
+    contenido.appendChild(texto);
+    contenido.appendChild(iconos);
+    texto.setAttribute("class","texto-legal");
+}
 export function generarInicio(){
     const cuerpo=document.getElementById("Cuerpo");
     const input=document.createElement("input");
-    const header=document.createElement("header");
     const footer=document.createElement("footer");
-    const h1=document.createElement("h1");
     var div;
-    h1.textContent="SOPA DE LETRAS";
-    div=document.createElement("div");
-    div.textContent="ÓSCAR POZUELO VILLAMANDOS";
-    header.appendChild(h1);
-    header.appendChild(div);
+    crearCabecera();
     div=document.createElement("div");
     div.setAttribute("id","Iniciar");
     div.textContent="¡BIENVENIDO A LA SOPA DE LETRAS!";
@@ -67,7 +99,6 @@ export function generarInicio(){
     });
     footer.setAttribute("id","FooterInicio");
     footer.innerHTML='2025-26 IES LOS SAUCES.&#169;Todos los derechos reservados.<a href="../../../index.html" id="Nombre">Óscar Pozuelo Villamandos</a> y fue modificado por ultima vez el <time datetime="2025-12-02">02-12-2025.</time>'
-    cuerpo.appendChild(header);
     cuerpo.appendChild(div);
     cuerpo.appendChild(input);
     cuerpo.appendChild(footer);
@@ -341,7 +372,6 @@ async function IniciarSopaDeLetras(){
 }
 function FinalizarSopaDeLetras(){
     const cuerpo=document.getElementById("Cuerpo");
-    const header=document.createElement("header");
     const h1=document.createElement("h1");
     const footer=document.createElement("footer");
     var div,input,span;
@@ -350,14 +380,10 @@ function FinalizarSopaDeLetras(){
     cuerpo.removeChild(document.getElementById("tabla3"));
     cuerpo.removeChild(document.getElementById("Cronometro"));
     cuerpo.removeChild(document.getElementById("FooterJuego"));
-    h1.textContent="SOPA DE LETRAS";
-    div=document.createElement("div");
-    div.textContent="ÓSCAR POZUELO VILLAMANDOS";
-    header.appendChild(h1);
-    header.appendChild(div);
+    cuerpo.removeChild(document.getElementById("titulo"));
+    crearCabecera();
     footer.innerHTML='2025-26 IES LOS SAUCES.&#169;Todos los derechos reservados.<a href="../../../index.html" id="Nombre">Óscar Pozuelo Villamandos</a> y fue modificado por ultima vez el <time datetime="2025-12-02">02-12-2025.</time>'
     footer.setAttribute("id","FooterInicio");
-    cuerpo.appendChild(header);
     div=document.createElement("div");
     div.setAttribute("id","Dificultad");
     div.textContent="DIFICULTAD:";
