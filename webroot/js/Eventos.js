@@ -79,6 +79,17 @@ function crearPieDePagina(){
     contenido.appendChild(texto);
     contenido.appendChild(iconos);
     texto.setAttribute("class","texto-legal");
+    p=document.createElement("p");
+    p.textContent="2025-26 IES LOS SAUCES. ©Todos los derechos reservados.";
+    texto.appendChild(p);
+    p=document.createElement("p");
+    p.setAttribute("class","autor");
+    a=document.createElement("a");
+    a.setAttribute("href","https://oscarpozvil.ieslossauces.es");
+    a.textContent("Óscar Pozuelo Villamandos.");
+    p.appendChild(a);
+    p.textContent="Fecha de Actualización: 14-04-2026";
+    texto.appendChild(p);
 }
 export function generarInicio(){
     const cuerpo=document.getElementById("Cuerpo");
@@ -95,7 +106,7 @@ export function generarInicio(){
     input.setAttribute("id","Comenzar");
     // input.setAttribute("onclick","seleccionDeDificultad()");
     input.addEventListener("click",()=>{
-        seleccionDeDificultad(false)
+        seleccionDeDificultad(false);
     });
     footer.setAttribute("id","FooterInicio");
     footer.innerHTML='2025-26 IES LOS SAUCES.&#169;Todos los derechos reservados.<a href="../../../index.html" id="Nombre">Óscar Pozuelo Villamandos</a> y fue modificado por ultima vez el <time datetime="2025-12-02">02-12-2025.</time>'
