@@ -71,7 +71,7 @@ function crearPieDePagina(){
     const contenido=document.createElement("div");
     const iconos=document.createElement("div");
     const texto=document.createElement("div");
-    var i,a,p;
+    var i,a,p,txt;
     cuerpo.appendChild(footer);
     footer.setAttribute("class","pie-pagina");
     footer.appendChild(contenido);
@@ -86,10 +86,28 @@ function crearPieDePagina(){
     p.setAttribute("class","autor");
     a=document.createElement("a");
     a.setAttribute("href","https://oscarpozvil.ieslossauces.es");
-    a.textContent("Óscar Pozuelo Villamandos.");
+    a.setAttribute("target","_blank");
+    a.textContent="Óscar Pozuelo Villamandos.";
     p.appendChild(a);
-    p.textContent="Fecha de Actualización: 14-04-2026";
+    txt=document.createTextNode("Fecha de Actualización: 14-04-2026");
+    p.appendChild(txt);
     texto.appendChild(p);
+    a=document.createElement("a");
+    iconos.setAttribute("class","iconos-footer");
+    iconos.appendChild(a);
+    a.setAttribute("href","https://github.com/SrPozuelo/OPVDWECSopaDeLetras");
+    a.setAttribute("target","_blank");
+    a.setAttribute("title","GitHub");
+    i=document.createElement("i");
+    i.setAttribute("class","fa-brands fa-github");
+    a.appendChild(i);
+    a=document.createElement("a");
+    a.setAttribute("href","../indexProyectoDWEC.html");
+    a.setAttribute("title","Desarrollo Web en Entorno Cliente (DWEC)");
+    i=document.createElement("i");
+    i.setAttribute("class","fa-solid fa-house");
+    a.appendChild(i);
+    iconos.appendChild(a);
 }
 export function generarInicio(){
     const cuerpo=document.getElementById("Cuerpo");
@@ -108,11 +126,7 @@ export function generarInicio(){
     input.addEventListener("click",()=>{
         seleccionDeDificultad(false);
     });
-    footer.setAttribute("id","FooterInicio");
-    footer.innerHTML='2025-26 IES LOS SAUCES.&#169;Todos los derechos reservados.<a href="../../../index.html" id="Nombre">Óscar Pozuelo Villamandos</a> y fue modificado por ultima vez el <time datetime="2025-12-02">02-12-2025.</time>'
-    cuerpo.appendChild(div);
-    cuerpo.appendChild(input);
-    cuerpo.appendChild(footer);
+    crearPieDePagina();
 }
 function seleccionDeDificultad(eliminar){
     const cuerpo=document.getElementById("Cuerpo");
